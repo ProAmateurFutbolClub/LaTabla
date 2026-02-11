@@ -97,6 +97,14 @@
     .equipo.blanco { background-color: #e3f2fd; }
     .equipo.negro { background-color: #f0f0f0; }
 
+
+    * { box-sizing: border-box; } body { margin: 0; font-family: Arial, sans-serif; } 
+    .slider { position: relative; max-width: 800px; margin: auto; overflow: hidden; border-radius: 8px; background: #000; text-align: center; } 
+    .slides { display: flex; transition: transform 0.8s ease-in-out; }
+    .slides img { width: 300px; /* ancho fijo más pequeño */ height: 300px; /* alto fijo para que sean cuadradas */ 
+        object-fit: cover; /* recorta la imagen sin deformarla */ margin: auto; border-radius: 8px; }
+
+
     
   </style>
 </head>
@@ -153,6 +161,23 @@
   </table>
   <h1>Caja= 150.000 gs</h1>
   <h1>TERCER TIEMPO 5/5</h1>
+  <div class="slider"> <div class="slides"> 
+    <img src="foto1.jpeg" alt="Foto 1"> 
+    <img src="foto2.jpeg" alt="Foto 2"> 
+    <img src="foto3.jpeg" alt="Foto 3"> 
+    <img src="foto4.jpeg" alt="Foto 4">
+    <img src="foto5.jpeg" alt="Foto 5">
+    <img src="foto6.jpeg" alt="Foto 6">
+    <img src="foto7.jpeg" alt="Foto 7">
+    <img src="foto8.jpeg" alt="Foto 8"> 
+    <img src="foto9.jpeg" alt="Foto 9">
+    <img src="foto10.jpeg" alt="Foto 10">
+    <img src="foto11.jpeg" alt="Foto 11">
+    <img src="foto12.jpeg" alt="Foto 12">
+    <img src="foto13.jpeg" alt="Foto 13">
+
+
+</div> </div>
 
   
 
@@ -308,7 +333,7 @@
      <!-- Partido 5 -->
     <div class="partido mini">
       <div class="partido-header">
-        <h4>02/02/2026</h4>
+        <h4>09/02/2026</h4>
         <span class="resultado">5ta Fecha - Blanco 13 - 6 Negro</span>
       </div>
       <div class="equipos">
@@ -404,6 +429,10 @@ function ordenarTabla() {
 window.onload = ordenarTabla;
 
 
+const slides = document.querySelector('.slides'); 
+const images = document.querySelectorAll('.slides img'); let index = 0; 
+function showSlide() { index = (index + 1) % images.length; slides.style.transform = `translateX(${-index * 320}px)`; } setInterval(showSlide, 2000); // cambia cada 3 segundos
+
   
 
 
@@ -415,6 +444,7 @@ window.onload = ordenarTabla;
 
 </body>
 </html>
+
 
 
 
