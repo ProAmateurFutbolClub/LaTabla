@@ -116,6 +116,43 @@
     transition: transform 0.5s ease, color 0.5s ease;
   }
 
+      #estrellas {
+    transition: all 0.5s ease; /* suaviza el cambio */
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+
+
+
+
+  #tabla-campeones {
+    border-collapse: collapse;
+    width: 600px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  #tabla-campeones th {
+    background-color: #004080;
+    color: white;
+    padding: 8px;
+  }
+  #tabla-campeones td {
+    padding: 6px;
+    border: 1px solid #ccc;
+  }
+  #tabla-campeones tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  #tabla-campeones tr:hover {
+    background-color: #e6f2ff;
+  }
+  #tabla-campeones {
+  margin-top: 20px; /* opcional */
+  }
+
+
+
 
 
     
@@ -123,48 +160,50 @@
 </head>
 <body>
   <h1>Tabla de Jugadores ⚽</h1>
-  <h1>9na Fecha📅</h1>
+  <h1>10ma Fecha📅</h1>
   <table id="tabla">
     <tr>
       <th>Jugador</th><th>Partidos</th><th>Ganados</th><th>Empatados</th>
       <th>Perdidos</th><th>Goles</th><th>Puntos</th>
     </tr>
-    <tr><td>Marce S</td><td>5</td><td>2</td><td>1</td><td>2</td><td>16</td><td>5</td></tr>
+    <tr><td>Marce S</td><td>6</td><td>2</td><td>1</td><td>3</td><td>15</td><td>5</td></tr>
     <tr><td>Cucho</td><td>6</td><td>4</td><td>0</td><td>2</td><td>14</td><td>6</td></tr>
     <tr><td>Sapo</td><td>7</td><td>5</td><td>0</td><td>2</td><td>9</td><td>10</td></tr>
-    <tr><td>Chicho</td><td>9</td><td>6</td><td>1</td><td>2</td><td>8</td><td>13</td></tr>
+    <tr><td>Chicho</td><td>10</td><td>7</td><td>1</td><td>2</td><td>8</td><td>15</td></tr>
     <tr><td>Masita</td><td>2</td><td>1</td><td>0</td><td>1</td><td>0</td><td>2</td></tr>
     <tr><td>Terzo</td><td>3</td><td>2</td><td>0</td><td>1</td><td>0</td><td>4</td></tr>
-    <tr><td>Agus D</td><td>9</td><td>3</td><td>1</td><td>5</td><td>3</td><td>7</td></tr>
-    <tr><td>Pape</td><td>7</td><td>2</td><td>1</td><td>4</td><td class="negativo">-74</td><td>5</td></tr>
-    <tr><td>Choco</td><td>8</td><td>1</td><td>1</td><td>6</td><td>25</td><td>3</td></tr>
-    <tr><td>Fabi</td><td>8</td><td>4</td><td>1</td><td>3</td><td>18</td><td>9</td></tr>
-    <tr><td>Seba</td><td>6</td><td>4</td><td>0</td><td>2</td><td>15</td><td>8</td></tr>
+    <tr><td>Agus D</td><td>10</td><td>4</td><td>1</td><td>5</td><td>6</td><td>9</td></tr>
+    <tr><td>Pape</td><td>8</td><td>2</td><td>1</td><td>5</td><td class="negativo">-81</td><td>5</td></tr>
+    <tr><td>Choco</td><td>9</td><td>1</td><td>1</td><td>7</td><td>27</td><td>3</td></tr>
+    <tr><td>Fabi</td><td>9</td><td>5</td><td>1</td><td>3</td><td>19</td><td>11</td></tr>
+    <tr><td>Seba</td><td>7</td><td>5</td><td>0</td><td>2</td><td>17</td><td>10</td></tr>
     <tr><td>Vargas</td><td>3</td><td>0</td><td>0</td><td>3</td><td>3</td><td>0</td></tr>
     <tr><td>Joaco</td><td>8</td><td>3</td><td>1</td><td>4</td><td>9</td><td>7</td></tr>
     <tr><td>Ricky</td><td>2</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
-    <tr><td>Javi</td><td>8</td><td>4</td><td>0</td><td>4</td><td>0</td><td>8</td></tr>
-    <tr><td>Benja</td><td>7</td><td>4</td><td>1</td><td>2</td><td class="negativo">-52</td><td>9</td></tr>
+    <tr><td>Javi</td><td>9</td><td>4</td><td>0</td><td>5</td><td>0</td><td>8</td></tr>
+    <tr><td>Benja</td><td>8</td><td>4</td><td>1</td><td>2</td><td class="negativo">-56</td><td>11</td></tr>
     <tr><td>Pichi</td><td>3</td><td>0</td><td>0</td><td>3</td><td>0</td><td>0</td></tr>
-    <tr><td>Diego</td><td>4</td><td>1</td><td>1</td><td>2</td><td>0</td><td>3</td></tr>
+    <tr><td>Diego</td><td>5</td><td>1</td><td>1</td><td>3</td><td>0</td><td>3</td></tr>
     <tr><td>Fer</td><td>3</td><td>2</td><td>0</td><td>1</td><td>2</td><td>4</td></tr>
     <tr><td>Pipa</td><td>5</td><td>2</td><td>1</td><td>2</td><td>1</td><td>3</td></tr>
-    <tr><td>Luquitas</td><td>6</td><td>3</td><td>1</td><td>2</td><td>5</td><td>7</td></tr>
-    <tr><td>Andy</td><td>1</td><td>1</td><td>0</td><td>0</td><td class="negativo">-8</td><td>2</td></tr>
+    <tr><td>Luquitas</td><td>7</td><td>3</td><td>1</td><td>3</td><td>6</td><td>7</td></tr>
+    <tr><td>Andy</td><td>2</td><td>2</td><td>0</td><td>0</td><td class="negativo">-8</td><td>4</td></tr>
     <tr><td>Igna</td><td>5</td><td>2</td><td>1</td><td>2</td><td>2</td><td>5</td></tr>
-    <tr><td>Marquitos</td><td>3</td><td>0</td><td>0</td><td>3</td><td>1</td><td>0</td></tr>
+    <tr><td>Marquitos</td><td>4</td><td>1</td><td>0</td><td>3</td><td>1</td><td>2</td></tr>
     <tr><td>Josei</td><td>2</td><td>1</td><td>0</td><td>1</td><td>4</td><td>2</td></tr>
     <tr><td>Davo</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
     <tr><td>Chepi</td><td>2</td><td>0</td><td>1</td><td>1</td><td>3</td><td>1</td></tr>
     <tr><td>Alan</td><td>3</td><td>3</td><td>0</td><td>0</td><td>6</td><td>6</td></tr>
-    <tr><td>Tommy</td><td>4</td><td>1</td><td>1</td><td>2</td><td>0</td><td>3</td></tr>
-    <tr><td>Guille 19hs</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+    <tr><td>Tommy</td><td>5</td><td>2</td><td>1</td><td>2</td><td>0</td><td>5</td></tr>
+    <tr><td>Guille 19hs</td><td>2</td><td>1</td><td>0</td><td>1</td><td>1</td><td>2</td></tr>
     <tr><td>Mauri 19hs</td><td>1</td><td>1</td><td>0</td><td>0</td><td class="negativo">-7</td><td>2</td></tr>
     <tr><td>Paqueta</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
     <tr><td>Gregor</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
     <tr><td>Georg</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+    <tr><td>Oscar</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>2</td></tr>
 
   </table>
+  <br><br><br>
 <div>
   <h1>Goleadores</h1>
 <table id="tabla" border="1" cellspacing="0" cellpadding="5">
@@ -174,15 +213,15 @@
   </tr>
   <tr>
     <td>Choco</td>
-    <td>25</td>
+    <td>27</td>
   </tr>
   <tr>
     <td>Fabi</td>
-    <td>18</td>
+    <td>19</td>
   </tr>
   <tr>
     <td>Seba</td>
-    <td>16</td>
+    <td>17</td>
   </tr>
   <tr>
     <td>Marce S</td>
@@ -194,7 +233,7 @@
   </tr>
 </table>
 </div>
-
+<br><br><br>
   <h1>Caja= 270.000 gs</h1>
   <h1>TERCER TIEMPO 9/9 🍖🍻</h1>
   <div class="slider"> <div class="slides"> 
@@ -222,7 +261,7 @@
 
 </div> </div>
 
-  
+  <br><br>
 
   <h1>Historial de Partidos 📅</h1>
   <div id="historial">
@@ -561,6 +600,108 @@
       </div>
     </div>
 
+    <!-- Partido 10 -->
+    <div class="partido mini">
+      <div class="partido-header">
+        <h4>23/03/2026</h4>
+        <span class="resultado">10ma Fecha - Blanco 7 - 4 Negro</span>
+      </div>
+      <div class="equipos">
+        <div class="equipo blanco">
+          <h5>Equipo Blanco</h5>
+          <ul>
+            <li>Benja</li>
+            <li>Marquitos</li>
+            <li>Chicho</li>
+            <li>Tommy</li>
+            <li>Agus(3)</li>
+            <li>Fabi(1)</li>
+            <li>Seba (1)</li>
+            <li>Andy(2)</li>
+            <li>CAJA=30.000 gs</li>
+          </ul>
+        </div>
+        <div class="equipo negro">
+          <h5>Equipo Negro</h5>
+          <ul>
+            <li>Pape</li>
+            <li>Diego</li>
+            <li>Guille 19hs(1)</li>
+            <li>Oscar</li>
+            <li>Javi</li>
+            <li>Marce s</li>
+            <li>Luquitas(1)</li>
+            <li>Choco(2)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+<br><br><br><br>
+
+<div>
+   <h1 id="estrellas">Estrellas consagradas</h1>
+  <table id="tabla-campeones">
+
+    <tr>
+      <th>Año</th>
+      <th>Mejor Jugador</th>
+      <th>Mejor Arquero</th>
+      <th>Goleador</th>
+    </tr>
+    <tr>
+      <td>2023/Clausura</td>
+    
+      <td>Tomo</td>
+      <td>Galar</td>
+      <td>Choco</td>
+    </tr>
+    <tr>
+      <td>2024/Apertura</td>
+      
+      <td>Choco</td>
+      <td>Marce</td>
+      <td>Choco</td>
+    </tr>
+    <tr>
+      <td>2024/Clausura</td>
+      
+      <td>Gregor</td>
+      <td>Galar</td>
+      <td>Choco</td>
+    </tr>
+
+    <tr>
+      <td>2025/Apertura</td>
+      
+      <td>Masita</td>
+      <td>Galar</td>
+      <td>Marce S</td>
+    </tr>
+
+    <tr>
+      <td>2025/Clausura</td>
+      
+      <td>Choco</td>
+      <td>Primo</td>
+      <td>Choco</td>
+    </tr>
+
+  </table>
+</div>
+<br><br><br>
+
+
+
+
+
+
+
+
+
+
+
     <table class="tabla-multas"> <caption><h1>⚠️Multas de Jugadores⚠️</h1></caption> <thead> <tr> <th>Jugador</th> <th>Motivo</th> <th>Multa</th> <th>Estado</th> </tr> </thead> <tbody> <tr> <td>Cucho</td> <td>Llegada tardia +30min</td> <td>30.000 Gs / -2 puntos</td> <td>Pendiente</td> </tr> </tbody> </table>
 
     
@@ -655,6 +796,27 @@ const titulo = document.getElementById("torneo");
 
 
 
+  const tituloEstrellas = document.getElementById("estrellas");
+  let estadoEstrellas = false;
+
+  setInterval(() => {
+    if (estadoEstrellas) {
+      tituloEstrellas.style.color = "yellow";   // letras amarillas
+      tituloEstrellas.style.transform = "translateX(10px)"; // se mueve a la derecha
+    } else {
+      tituloEstrellas.style.color = "black";    // letras negras
+      tituloEstrellas.style.transform = "translateX(-10px)"; // se mueve a la izquierda
+    }
+    estadoEstrellas = !estadoEstrellas;
+  }, 1000); // cada 1 segundo
+
+
+
+  
+
+
+
+
   
 
 
@@ -666,6 +828,54 @@ const titulo = document.getElementById("torneo");
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
