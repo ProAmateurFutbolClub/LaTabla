@@ -20,29 +20,33 @@
     th, td { text-align: center; padding: 8px; border: 1px solid #d1d0d0; cursor: pointer; }
     th { background-color: #cccaca; color: rgb(27,27,27); }
 
-    /* Colores por columna */
-    td:nth-child(2), th:nth-child(2) { background-color: #e3f2fd; }
-    td:nth-child(3), th:nth-child(3) { background-color: #c8e6c9; }
-    td:nth-child(4), th:nth-child(4) { background-color: #fff9c4; }
-    td:nth-child(5), th:nth-child(5) { background-color: #ffcdd2; }
-    td:nth-child(6), th:nth-child(6) { background-color: #d1c4e9; }
-    td:nth-child(7), th:nth-child(7) { background-color: #b2dfdb; }
+    /* Columna de posición */
+    td:nth-child(1), th:nth-child(1) { background-color: #f5f5f5; font-weight: bold; }
+
+    /* Colores por columna (desplazados uno) */
+    td:nth-child(2), th:nth-child(2) { background-color: #f5f5f5; }
+    td:nth-child(3), th:nth-child(3) { background-color: #e3f2fd; }
+    td:nth-child(4), th:nth-child(4) { background-color: #c8e6c9; }
+    td:nth-child(5), th:nth-child(5) { background-color: #fff9c4; }
+    td:nth-child(6), th:nth-child(6) { background-color: #ffcdd2; }
+    td:nth-child(7), th:nth-child(7) { background-color: #d1c4e9; }
+    td:nth-child(8), th:nth-child(8) { background-color: #b2dfdb; }
 
     tr:hover { background-color: #ffe082; }
-    td:nth-child(6).negativo { color: red; font-weight: bold; }
+    td.negativo { color: red; font-weight: bold; }
     tr.seleccionado td { background-color: #444 !important; color: #fff; font-weight: bold; }
 
     /* Contenedor en flex */
     #historial {
       display: flex;
-      flex-wrap: wrap;   /* permite que bajen si no entran */
-      gap: 15px;         /* espacio entre tarjetas */
-      justify-content: center; /* centrado */
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
     }
 
     /* Tarjeta compacta */
     .partido.mini {
-      width: 250px;      /* tamaño fijo más chico */
+      width: 250px;
       padding: 8px;
       font-size: 12px;
       background: #fff;
@@ -107,8 +111,7 @@
     * { box-sizing: border-box; } body { margin: 0; font-family: Arial, sans-serif; } 
     .slider { position: relative; max-width: 800px; margin: auto; overflow: hidden; border-radius: 8px; background: #000; text-align: center; } 
     .slides { display: flex; transition: transform 0.8s ease-in-out; }
-    .slides img { width: 300px; /* ancho fijo más pequeño */ height: 300px; /* alto fijo para que sean cuadradas */ 
-        object-fit: cover; /* recorta la imagen sin deformarla */ margin: auto; border-radius: 8px; }
+    .slides img { width: 300px; height: 300px; object-fit: cover; margin: auto; border-radius: 8px; }
 
     
      #torneo {
@@ -117,14 +120,10 @@
   }
 
       #estrellas {
-    transition: all 0.5s ease; /* suaviza el cambio */
+    transition: all 0.5s ease;
     text-align: center;
     font-family: Arial, sans-serif;
   }
-
-
-
-
 
   #tabla-campeones {
     border-collapse: collapse;
@@ -148,24 +147,21 @@
     background-color: #e6f2ff;
   }
   #tabla-campeones {
-  margin-top: 20px; /* opcional */
+  margin-top: 20px;
   }
 
   .premios {
     display: flex;
-    justify-content: center; /* centra horizontalmente */
-    align-items: center;     /* centra verticalmente si hay altura */
-    gap: 5px;               /* espacio entre imágenes */
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
     margin-top: 30px;
   }
 
   .premios img {
-    width: 250px;   /* ancho fijo */
-    height: auto;   /* mantiene proporción */
+    width: 250px;
+    height: auto;
   }
-
-
-    
   </style>
 </head>
 <body>
@@ -173,79 +169,61 @@
   <h1>14a Fecha📅</h1>
   <table id="tabla">
     <tr>
-      <th>Jugador</th><th>Partidos</th><th>Ganados</th><th>Empatados</th>
+      <th>N°</th><th>Jugador</th><th>Partidos</th><th>Ganados</th><th>Empatados</th>
       <th>Perdidos</th><th>Goles</th><th>Puntos</th>
     </tr>
-    <tr><td>Marce S</td><td>7</td><td>2</td><td>1</td><td>4</td><td>19</td><td>5</td></tr>
-    <tr><td>Cucho</td><td>9</td><td>4</td><td>1</td><td>4</td><td>18</td><td>7</td></tr>
-    <tr><td>Sapo</td><td>7</td><td>5</td><td>0</td><td>2</td><td>9</td><td>10</td></tr>
-    <tr><td>Chicho</td><td>14</td><td>8</td><td>2</td><td>5</td><td>12</td><td>16</td></tr>
-    <tr><td>Masita 🏆</td><td>2</td><td>1</td><td>0</td><td>1</td><td>0</td><td>2</td></tr>
-    <tr><td>Terzo</td><td>3</td><td>2</td><td>0</td><td>1</td><td>0</td><td>4</td></tr>
-    <tr><td>Agus D</td><td>14</td><td>5</td><td>2</td><td>7</td><td>10</td><td>12</td></tr>
-    <tr><td>Pape</td><td>11</td><td>2</td><td>2</td><td>7</td><td class="negativo">-101</td><td>6</td></tr>
-    <tr><td>Choco 🏆</td><td>13</td><td>4</td><td>2</td><td>7</td><td>41</td><td>10</td></tr>
-    <tr><td>Fabi</td><td>11</td><td>6</td><td>2</td><td>3</td><td>24</td><td>14</td></tr>
-    <tr><td>Seba</td><td>10</td><td>5</td><td>1</td><td>4</td><td>19</td><td>11</td></tr>
-    <tr><td>Vargas</td><td>4</td><td>0</td><td>0</td><td>4</td><td>6</td><td>0</td></tr>
-    <tr><td>Joaco</td><td>9</td><td>3</td><td>2</td><td>4</td><td>10</td><td>8</td></tr>
-    <tr><td>Ricky</td><td>4</td><td>1</td><td>1</td><td>2</td><td>0</td><td>3</td></tr>
-    <tr><td>Javi</td><td>12</td><td>5</td><td>1</td><td>6</td><td>3</td><td>11</td></tr>
-    <tr><td>Benja</td><td>12</td><td>7</td><td>2</td><td>3</td><td class="negativo">-75</td><td>16</td></tr>
-    <tr><td>Pichi 🏆</td><td>5</td><td>1</td><td>1</td><td>3</td><td>0</td><td>3</td></tr>
-    <tr><td>Diego</td><td>5</td><td>1</td><td>1</td><td>3</td><td>0</td><td>3</td></tr>
-    <tr><td>Fer</td><td>5</td><td>4</td><td>0</td><td>1</td><td>7</td><td>8</td></tr>
-    <tr><td>Pipa</td><td>6</td><td>2</td><td>1</td><td>3</td><td>1</td><td>5</td></tr>
-    <tr><td>Luquitas</td><td>8</td><td>4</td><td>1</td><td>3</td><td>8</td><td>9</td></tr>
-    <tr><td>Andy</td><td>3</td><td>2</td><td>1</td><td>0</td><td class="negativo">-8</td><td>5</td></tr>
-    <tr><td>Igna</td><td>6</td><td>2</td><td>1</td><td>3</td><td>2</td><td>5</td></tr>
-    <tr><td>Marquitos</td><td>4</td><td>1</td><td>0</td><td>3</td><td>1</td><td>2</td></tr>
-    <tr><td>Josei</td><td>2</td><td>1</td><td>0</td><td>1</td><td>4</td><td>2</td></tr>
-    <tr><td>Davo</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
-    <tr><td>Chepi</td><td>4</td><td>1</td><td>1</td><td>2</td><td>4</td><td>3</td></tr>
-    <tr><td>Alan</td><td>3</td><td>3</td><td>0</td><td>0</td><td>6</td><td>6</td></tr>
-    <tr><td>Tommy</td><td>9</td><td>5</td><td>2</td><td>2</td><td>0</td><td>12</td></tr>
-    <tr><td>Guille 19hs</td><td>3</td><td>2</td><td>0</td><td>1</td><td>2</td><td>4</td></tr>
-    <tr><td>Mauri 19hs</td><td>2</td><td>2</td><td>0</td><td>0</td><td class="negativo">-16</td><td>4</td></tr>
-    <tr><td>Paqueta</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
-    <tr><td>Gregor 🏆</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
-    <tr><td>Georg</td><td>2</td><td>1</td><td>1</td><td>0</td><td>0</td><td>3</td></tr>
-    <tr><td>Oscar</td><td>2</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0</td></tr>
-    <tr><td>Victor 19hs</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-    <tr><td>Sangre</td><td>3</td><td>1</td><td>1</td><td>1</td><td>1</td><td>3</td></tr>
-    <tr><td>Martin</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
-
+    <tr><td></td><td>Marce S</td><td>7</td><td>2</td><td>1</td><td>4</td><td>19</td><td>5</td></tr>
+    <tr><td></td><td>Cucho</td><td>9</td><td>4</td><td>1</td><td>4</td><td>18</td><td>7</td></tr>
+    <tr><td></td><td>Sapo</td><td>7</td><td>5</td><td>0</td><td>2</td><td>9</td><td>10</td></tr>
+    <tr><td></td><td>Chicho</td><td>14</td><td>8</td><td>2</td><td>5</td><td>12</td><td>16</td></tr>
+    <tr><td></td><td>Masita 🏆</td><td>2</td><td>1</td><td>0</td><td>1</td><td>0</td><td>2</td></tr>
+    <tr><td></td><td>Terzo</td><td>3</td><td>2</td><td>0</td><td>1</td><td>0</td><td>4</td></tr>
+    <tr><td></td><td>Agus D</td><td>14</td><td>5</td><td>2</td><td>7</td><td>10</td><td>12</td></tr>
+    <tr><td></td><td>Pape</td><td>11</td><td>2</td><td>2</td><td>7</td><td class="negativo">-101</td><td>6</td></tr>
+    <tr><td></td><td>Choco 🏆</td><td>13</td><td>4</td><td>2</td><td>7</td><td>41</td><td>10</td></tr>
+    <tr><td></td><td>Fabi</td><td>11</td><td>6</td><td>2</td><td>3</td><td>24</td><td>14</td></tr>
+    <tr><td></td><td>Seba</td><td>10</td><td>5</td><td>1</td><td>4</td><td>19</td><td>11</td></tr>
+    <tr><td></td><td>Vargas</td><td>4</td><td>0</td><td>0</td><td>4</td><td>6</td><td>0</td></tr>
+    <tr><td></td><td>Joaco</td><td>9</td><td>3</td><td>2</td><td>4</td><td>10</td><td>8</td></tr>
+    <tr><td></td><td>Ricky</td><td>4</td><td>1</td><td>1</td><td>2</td><td>0</td><td>3</td></tr>
+    <tr><td></td><td>Javi</td><td>12</td><td>5</td><td>1</td><td>6</td><td>3</td><td>11</td></tr>
+    <tr><td></td><td>Benja</td><td>12</td><td>7</td><td>2</td><td>3</td><td class="negativo">-75</td><td>16</td></tr>
+    <tr><td></td><td>Pichi 🏆</td><td>5</td><td>1</td><td>1</td><td>3</td><td>0</td><td>3</td></tr>
+    <tr><td></td><td>Diego</td><td>5</td><td>1</td><td>1</td><td>3</td><td>0</td><td>3</td></tr>
+    <tr><td></td><td>Fer</td><td>5</td><td>4</td><td>0</td><td>1</td><td>7</td><td>8</td></tr>
+    <tr><td></td><td>Pipa</td><td>6</td><td>2</td><td>1</td><td>3</td><td>1</td><td>5</td></tr>
+    <tr><td></td><td>Luquitas</td><td>8</td><td>4</td><td>1</td><td>3</td><td>8</td><td>9</td></tr>
+    <tr><td></td><td>Andy</td><td>3</td><td>2</td><td>1</td><td>0</td><td class="negativo">-8</td><td>5</td></tr>
+    <tr><td></td><td>Igna</td><td>6</td><td>2</td><td>1</td><td>3</td><td>2</td><td>5</td></tr>
+    <tr><td></td><td>Marquitos</td><td>4</td><td>1</td><td>0</td><td>3</td><td>1</td><td>2</td></tr>
+    <tr><td></td><td>Josei</td><td>2</td><td>1</td><td>0</td><td>1</td><td>4</td><td>2</td></tr>
+    <tr><td></td><td>Davo</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+    <tr><td></td><td>Chepi</td><td>4</td><td>1</td><td>1</td><td>2</td><td>4</td><td>3</td></tr>
+    <tr><td></td><td>Alan</td><td>3</td><td>3</td><td>0</td><td>0</td><td>6</td><td>6</td></tr>
+    <tr><td></td><td>Tommy</td><td>9</td><td>5</td><td>2</td><td>2</td><td>0</td><td>12</td></tr>
+    <tr><td></td><td>Guille 19hs</td><td>3</td><td>2</td><td>0</td><td>1</td><td>2</td><td>4</td></tr>
+    <tr><td></td><td>Mauri 19hs</td><td>2</td><td>2</td><td>0</td><td>0</td><td class="negativo">-16</td><td>4</td></tr>
+    <tr><td></td><td>Paqueta</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+    <tr><td></td><td>Gregor 🏆</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+    <tr><td></td><td>Georg</td><td>2</td><td>1</td><td>1</td><td>0</td><td>0</td><td>3</td></tr>
+    <tr><td></td><td>Oscar</td><td>2</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0</td></tr>
+    <tr><td></td><td>Victor 19hs</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+    <tr><td></td><td>Sangre</td><td>3</td><td>1</td><td>1</td><td>1</td><td>1</td><td>3</td></tr>
+    <tr><td></td><td>Martin</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
   </table>
   <br><br><br>
 <div>
   <h1>Goleadores</h1>
-<table id="tabla" border="1" cellspacing="0" cellpadding="5">
+<table id="tabla-goles" border="1" cellspacing="0" cellpadding="5">
   <tr>
     <th>Jugador</th>
     <th>Goles</th>
   </tr>
-  <tr>
-    <td>Choco</td>
-    <td>41</td>
-  </tr>
-  <tr>
-    <td>Fabi</td>
-    <td>24</td>
-  </tr>
-  <tr>
-    <td>Marce S</td>
-    <td>19</td>
-  </tr>
-  <tr>
-    <td>Seba</td>
-    <td>19</td>
-  </tr>
-  <tr>
-    <td>Cucho</td>
-    <td>18</td>
-  </tr>
-  
-  
+  <tr><td>Choco</td><td>41</td></tr>
+  <tr><td>Fabi</td><td>24</td></tr>
+  <tr><td>Marce S</td><td>19</td></tr>
+  <tr><td>Seba</td><td>19</td></tr>
+  <tr><td>Cucho</td><td>18</td></tr>
 </table>
 </div>
 <br><br><br>
@@ -276,8 +254,6 @@
     <img src="foto22.jpeg" alt="Foto 22">
     <img src="foto23.jpeg" alt="Foto 23">
     <img src="foto24.jpeg" alt="Foto 24">
-
-
 </div> </div>
 
   <br><br>
@@ -294,28 +270,16 @@
         <div class="equipo blanco">
           <h5>Equipo Blanco</h5>
           <ul>
-            <li>Pape</li>
-            <li>Masita</li>
-            <li>Sapo (2)</li>
-            <li>Chicho (1)</li>
-            <li>Marce S (5)</li>
-            <li>Cucho (2)</li>
-            <li>Terzo</li>
-            <li>Agus D</li>
+            <li>Pape</li><li>Masita</li><li>Sapo (2)</li><li>Chicho (1)</li>
+            <li>Marce S (5)</li><li>Cucho (2)</li><li>Terzo</li><li>Agus D</li>
             <li>CAJA=30.000 gs</li>
           </ul>
         </div>
         <div class="equipo negro">
           <h5>Equipo Negro</h5>
           <ul>
-            <li>Benja</li>
-            <li>Joaco</li>
-            <li>Vargas</li>
-            <li>Ricky</li>
-            <li>Javi</li>
-            <li>Seba (1)</li>
-            <li>Choco (5)</li>
-            <li>Fabi (2)</li>
+            <li>Benja</li><li>Joaco</li><li>Vargas</li><li>Ricky</li>
+            <li>Javi</li><li>Seba (1)</li><li>Choco (5)</li><li>Fabi (2)</li>
           </ul>
         </div>
       </div>
@@ -330,33 +294,20 @@
         <div class="equipo blanco">
           <h5>Equipo Blanco</h5>
           <ul>
-            <li>Choco (1)</li>
-            <li>Pichi</li>
-            <li>chicho (1)</li>
-            <li>Seba (3)</li>
-            <li>Diego</li>
-            <li>Fabi (3)</li>
-            <li>Pipa</li>
-            <li>Javi</li>
+            <li>Choco (1)</li><li>Pichi</li><li>chicho (1)</li><li>Seba (3)</li>
+            <li>Diego</li><li>Fabi (3)</li><li>Pipa</li><li>Javi</li>
             <li>CAJA=30.000 gs</li>
           </ul>
         </div>
         <div class="equipo negro">
           <h5>Equipo Negro</h5>
           <ul>
-            <li>Benja</li>
-            <li>Joaco (2)</li>
-            <li>Agus D</li>
-            <li>Cucho (2)</li>
-            <li>Terzo</li>
-            <li>Fer (1)</li>
-            <li>Lucas (2)</li>
-            <li>Sapo (2)</li>
+            <li>Benja</li><li>Joaco (2)</li><li>Agus D</li><li>Cucho (2)</li>
+            <li>Terzo</li><li>Fer (1)</li><li>Lucas (2)</li><li>Sapo (2)</li>
           </ul>
         </div>
       </div>
     </div>
-
     <!-- Partido 3 -->
     <div class="partido mini">
       <div class="partido-header">
@@ -367,33 +318,20 @@
         <div class="equipo blanco">
           <h5>Equipo Blanco</h5>
           <ul>
-            <li>Andy</li>
-            <li>Igna</li>
-            <li>Sapo</li>
-            <li>Seba (4)</li>
-            <li>Pipa</li>
-            <li>Fabi (3)</li>
-            <li>Lucas (2)</li>
-            <li>Javi</li>
+            <li>Andy</li><li>Igna</li><li>Sapo</li><li>Seba (4)</li>
+            <li>Pipa</li><li>Fabi (3)</li><li>Lucas (2)</li><li>Javi</li>
             <li>CAJA=30.000 gs</li>
           </ul>
         </div>
         <div class="equipo negro">
           <h5>Equipo Negro</h5>
           <ul>
-            <li>Pape</li>
-            <li>Joaco</li>
-            <li>Agus D</li>
-            <li>Pichi</li>
-            <li>Marquitos</li>
-            <li>Cucho (3)</li>
-            <li>Josei (2)</li>
-            <li>Chicho (2)</li>
+            <li>Pape</li><li>Joaco</li><li>Agus D</li><li>Pichi</li>
+            <li>Marquitos</li><li>Cucho (3)</li><li>Josei (2)</li><li>Chicho (2)</li>
           </ul>
         </div>
       </div>
     </div>
-
     <!-- Partido 4 -->
     <div class="partido mini">
       <div class="partido-header">
@@ -404,34 +342,21 @@
         <div class="equipo blanco">
           <h5>Equipo Blanco</h5>
           <ul>
-            <li>Benja</li>
-            <li>Fabi</li>
-            <li>chicho (1)</li>
-            <li>Seba (2)</li>
-            <li>Pipa(1)</li>
-            <li>Javi</li>
-            <li>Cucho(2)</li>
-            <li>Fer(1)</li>
+            <li>Benja</li><li>Fabi</li><li>chicho (1)</li><li>Seba (2)</li>
+            <li>Pipa(1)</li><li>Javi</li><li>Cucho(2)</li><li>Fer(1)</li>
             <li>CAJA=30.000 gs</li>
           </ul>
         </div>
         <div class="equipo negro">
           <h5>Equipo Negro</h5>
           <ul>
-            <li>Pape</li>
-            <li>Agus (2)</li>
-            <li>Igna(1)</li>
-            <li>Chepi</li>
-            <li>Masita</li>
-            <li>Lucas (1)</li>
-            <li>Davo (1)</li>
-            <li>Choco(1)</li>
+            <li>Pape</li><li>Agus (2)</li><li>Igna(1)</li><li>Chepi</li>
+            <li>Masita</li><li>Lucas (1)</li><li>Davo (1)</li><li>Choco(1)</li>
           </ul>
         </div>
       </div>
     </div>
-
-     <!-- Partido 5 -->
+    <!-- Partido 5 -->
     <div class="partido mini">
       <div class="partido-header">
         <h4>09/02/2026</h4>
@@ -441,33 +366,20 @@
         <div class="equipo blanco">
           <h5>Equipo Blanco</h5>
           <ul>
-            <li>Benja</li>
-            <li>Tommy</li>
-            <li>chicho (1)</li>
-            <li>Alan (2)</li>
-            <li>Agus D(1)</li>
-            <li>Josei (2)</li>
-            <li>Cucho(5)</li>
-            <li>Sapo(2)</li>
+            <li>Benja</li><li>Tommy</li><li>chicho (1)</li><li>Alan (2)</li>
+            <li>Agus D(1)</li><li>Josei (2)</li><li>Cucho(5)</li><li>Sapo(2)</li>
             <li>CAJA=30.000 gs</li>
           </ul>
         </div>
         <div class="equipo negro">
           <h5>Equipo Negro</h5>
           <ul>
-            <li>Pape</li>
-            <li>Fer</li>
-            <li>Pipa</li>
-            <li>Joaco(1)</li>
-            <li>Javi</li>
-            <li>Fabi</li>
-            <li>Terzo (1)</li>
-            <li>Choco(4)</li>
+            <li>Pape</li><li>Fer</li><li>Pipa</li><li>Joaco(1)</li>
+            <li>Javi</li><li>Fabi</li><li>Terzo (1)</li><li>Choco(4)</li>
           </ul>
         </div>
       </div>
     </div>
-
     <!-- Partido 6 -->
     <div class="partido mini">
       <div class="partido-header">
@@ -478,33 +390,20 @@
         <div class="equipo blanco">
           <h5>Equipo Blanco</h5>
           <ul>
-            <li>Pape</li>
-            <li>Diego</li>
-            <li>Joaco (1)</li>
-            <li>Marquitos(1)</li>
-            <li>Agus D/Cucho</li>
-            <li>Javi</li>
-            <li>Lucas</li>
-            <li>Choco(5)</li>
+            <li>Pape</li><li>Diego</li><li>Joaco (1)</li><li>Marquitos(1)</li>
+            <li>Agus D/Cucho</li><li>Javi</li><li>Lucas</li><li>Choco(5)</li>
             <li>CAJA=30.000 gs</li>
           </ul>
         </div>
         <div class="equipo negro">
           <h5>Equipo Negro</h5>
           <ul>
-            <li>Mauri 19hs</li>
-            <li>Chicho</li>
-            <li>Guille 19hs</li>
-            <li>Igna</li>
-            <li>Marce s(4)</li>
-            <li>Fabi(5)</li>
-            <li>Seba (3)</li>
-            <li>Sapo(1)</li>
+            <li>Mauri 19hs</li><li>Chicho</li><li>Guille 19hs</li><li>Igna</li>
+            <li>Marce s(4)</li><li>Fabi(5)</li><li>Seba (3)</li><li>Sapo(1)</li>
           </ul>
         </div>
       </div>
     </div>
-
     <!-- Partido 7 -->
     <div class="partido mini">
       <div class="partido-header">
@@ -515,33 +414,20 @@
         <div class="equipo negro">
           <h5>Equipo Negro</h5>
           <ul>
-            <li>Pape</li>
-            <li>Sapo</li>
-            <li>Tommy a</li>
-            <li>Marquitos</li>
-            <li>Agus D</li>
-            <li>Marce s(2)</li>
-            <li>Vargas(1)</li>
-            <li>Choco(3)</li>
+            <li>Pape</li><li>Sapo</li><li>Tommy a</li><li>Marquitos</li>
+            <li>Agus D</li><li>Marce s(2)</li><li>Vargas(1)</li><li>Choco(3)</li>
             <li>CAJA=30.000 gs</li>
           </ul>
         </div>
         <div class="equipo blanco">
           <h5>Equipo blanco</h5>
           <ul>
-            <li>Benja</li>
-            <li>Chicho</li>
-            <li>Alan(2)</li>
-            <li>Diego</li>
-            <li>Javi</li>
-            <li>Fabi(3)</li>
-            <li>Lucas</li>
-            <li>Joaco(3)</li>
+            <li>Benja</li><li>Chicho</li><li>Alan(2)</li><li>Diego</li>
+            <li>Javi</li><li>Fabi(3)</li><li>Lucas</li><li>Joaco(3)</li>
           </ul>
         </div>
       </div>
     </div>
-
     <!-- Partido 8 -->
     <div class="partido mini">
       <div class="partido-header">
@@ -552,36 +438,20 @@
         <div class="equipo blanco">
           <h5>Equipo Blanco</h5>
           <ul>
-            <li>Pape</li>
-            <li>Pipa</li>
-            <li>Tommy a</li>
-            <li>Igna</li>
-            <li>Agus D</li>
-            <li>Marce s(2)</li>
-            <li>Chicho(2)</li>
-            <li>Choco(3)</li>
+            <li>Pape</li><li>Pipa</li><li>Tommy a</li><li>Igna</li>
+            <li>Agus D</li><li>Marce s(2)</li><li>Chicho(2)</li><li>Choco(3)</li>
             <li>CAJA=30.000 gs</li>
           </ul>
         </div>
         <div class="equipo negro">
           <h5>Equipo Negro</h5>
           <ul>
-            <li>Benja</li>
-            <li>Diego</li>
-            <li>Joaco</li>
-            <li>Ricky</li>
-            <li>Chepi(2)</li>
-            <li>Fabi(3)</li>
-            <li>Lucas</li>
-            <li>Gregor(1)/Paqueta(1)</li>
+            <li>Benja</li><li>Diego</li><li>Joaco</li><li>Ricky</li>
+            <li>Chepi(2)</li><li>Fabi(3)</li><li>Lucas</li><li>Gregor(1)/Paqueta(1)</li>
           </ul>
         </div>
       </div>
     </div>
-
-
-
-
     <!-- Partido 9 -->
     <div class="partido mini">
       <div class="partido-header">
@@ -592,33 +462,20 @@
         <div class="equipo blanco">
           <h5>Equipo Blanco</h5>
           <ul>
-            <li>Pape</li>
-            <li>Joaco</li>
-            <li>Chicho</li>
-            <li>Alan(2)</li>
-            <li>Javi</li>
-            <li>Georg</li>
-            <li>Seba (2)</li>
-            <li>Choco(3)</li>
+            <li>Pape</li><li>Joaco</li><li>Chicho</li><li>Alan(2)</li>
+            <li>Javi</li><li>Georg</li><li>Seba (2)</li><li>Choco(3)</li>
             <li>CAJA=30.000 gs</li>
           </ul>
         </div>
         <div class="equipo negro">
           <h5>Equipo Negro</h5>
           <ul>
-            <li>Benja</li>
-            <li>Tommy a</li>
-            <li>Pichi</li>
-            <li>Igna(1)</li>
-            <li>Agus d</li>
-            <li>Vargas(3)</li>
-            <li>Marce s(3)</li>
-            <li>Sapo(2)</li>
+            <li>Benja</li><li>Tommy a</li><li>Pichi</li><li>Igna(1)</li>
+            <li>Agus d</li><li>Vargas(3)</li><li>Marce s(3)</li><li>Sapo(2)</li>
           </ul>
         </div>
       </div>
     </div>
-
     <!-- Partido 10 -->
     <div class="partido mini">
       <div class="partido-header">
@@ -629,33 +486,20 @@
         <div class="equipo blanco">
           <h5>Equipo Blanco</h5>
           <ul>
-            <li>Benja</li>
-            <li>Marquitos</li>
-            <li>Chicho</li>
-            <li>Tommy</li>
-            <li>Agus(3)</li>
-            <li>Fabi(1)</li>
-            <li>Seba (1)</li>
-            <li>Andy(2)</li>
+            <li>Benja</li><li>Marquitos</li><li>Chicho</li><li>Tommy</li>
+            <li>Agus(3)</li><li>Fabi(1)</li><li>Seba (1)</li><li>Andy(2)</li>
             <li>CAJA=30.000 gs</li>
           </ul>
         </div>
         <div class="equipo negro">
           <h5>Equipo Negro</h5>
           <ul>
-            <li>Pape</li>
-            <li>Diego</li>
-            <li>Guille 19hs(1)</li>
-            <li>Oscar</li>
-            <li>Javi</li>
-            <li>Marce s</li>
-            <li>Luquitas(1)</li>
-            <li>Choco(2)</li>
+            <li>Pape</li><li>Diego</li><li>Guille 19hs(1)</li><li>Oscar</li>
+            <li>Javi</li><li>Marce s</li><li>Luquitas(1)</li><li>Choco(2)</li>
           </ul>
         </div>
       </div>
     </div>
-
     <!-- Partido 11 -->
     <div class="partido mini">
       <div class="partido-header">
@@ -666,34 +510,20 @@
         <div class="equipo blanco">
           <h5>Equipo Blanco</h5>
           <ul>
-            <li>Mauri</li>
-            <li>Chepi(1)</li>
-            <li>Ricky</li>
-            <li>Tommy</li>
-            <li>Fer(5)</li>
-            <li>Guille(1)</li>
-            <li>Ami fer</li>
-            <li>Choco(5)</li>
+            <li>Mauri</li><li>Chepi(1)</li><li>Ricky</li><li>Tommy</li>
+            <li>Fer(5)</li><li>Guille(1)</li><li>Ami fer</li><li>Choco(5)</li>
             <li>CAJA=30.000 gs</li>
           </ul>
         </div>
         <div class="equipo negro">
           <h5>Equipo Negro</h5>
           <ul>
-            <li>Benja</li>
-            <li>Chicho(1)</li>
-            <li>Victor</li>
-            <li>Oscar</li>
-            <li>Agus(1)</li>
-            <li>Cucho(3)</li>
-            <li>Vargas(2)</li>
-            <li>Sangre(2)</li>
+            <li>Benja</li><li>Chicho(1)</li><li>Victor</li><li>Oscar</li>
+            <li>Agus(1)</li><li>Cucho(3)</li><li>Vargas(2)</li><li>Sangre(2)</li>
           </ul>
         </div>
       </div>
     </div>
-
-
     <!-- Partido 12 -->
     <div class="partido mini">
       <div class="partido-header">
@@ -704,33 +534,20 @@
         <div class="equipo blanco">
           <h5>Equipo Blanco</h5>
           <ul>
-            <li>pape</li>
-            <li>Chicho(1)</li>
-            <li>Ricky</li>
-            <li>pipa</li>
-            <li>Agus</li>
-            <li>Seba(1)</li>
-            <li>Marce s(4)</li>
-            <li>Cary</li>
+            <li>pape</li><li>Chicho(1)</li><li>Ricky</li><li>pipa</li>
+            <li>Agus</li><li>Seba(1)</li><li>Marce s(4)</li><li>Cary</li>
             <li>CAJA=30.000 gs</li>
           </ul>
         </div>
         <div class="equipo negro">
           <h5>Equipo Negro</h5>
           <ul>
-            <li>Benja</li>
-            <li>fer</li>
-            <li>martin</li>
-            <li>tommy</li>
-            <li>javi(1)</li>
-            <li>luquitas(2)</li>
-            <li>sangre(1)</li>
-            <li>Choco(5)</li>
+            <li>Benja</li><li>fer</li><li>martin</li><li>tommy</li>
+            <li>javi(1)</li><li>luquitas(2)</li><li>sangre(1)</li><li>Choco(5)</li>
           </ul>
         </div>
       </div>
     </div>
-
     <!-- Partido 13 -->
     <div class="partido mini">
       <div class="partido-header">
@@ -741,33 +558,20 @@
         <div class="equipo blanco">
           <h5>Equipo Blanco</h5>
           <ul>
-            <li>andy</li>
-            <li>fabi (1)</li>
-            <li>georg</li>
-            <li>benja(1)</li>
-            <li>Agus(1)</li>
-            <li>amigo agus</li>
-            <li>cucho</li>
-            <li>sangre</li>
+            <li>andy</li><li>fabi (1)</li><li>georg</li><li>benja(1)</li>
+            <li>Agus(1)</li><li>amigo agus</li><li>cucho</li><li>sangre</li>
             <li>CAJA=30.000 gs</li>
           </ul>
         </div>
         <div class="equipo negro">
           <h5>Equipo Negro</h5>
           <ul>
-            <li>pape</li>
-            <li>chicho(1)</li>
-            <li>cary</li>
-            <li>tommi</li>
-            <li>joaco</li>
-            <li>javi(1)</li>
-            <li>seba</li>
-            <li>Choco(1)</li>
+            <li>pape</li><li>chicho(1)</li><li>cary</li><li>tommi</li>
+            <li>joaco</li><li>javi(1)</li><li>seba</li><li>Choco(1)</li>
           </ul>
         </div>
       </div>
     </div>
-
     <!-- Partido 14 -->
     <div class="partido mini">
       <div class="partido-header">
@@ -778,39 +582,20 @@
         <div class="equipo blanco">
           <h5>Equipo Blanco</h5>
           <ul>
-            <li>pape</li>
-            <li>Chicho(1)</li>
-            <li>carlos(3)</li>
-            <li>igna</li>
-            <li>javi(1)</li>
-            <li>chepi</li>
-            <li>seba(1)</li>
-            <li>cucho(1)</li>
+            <li>pape</li><li>Chicho(1)</li><li>carlos(3)</li><li>igna</li>
+            <li>javi(1)</li><li>chepi</li><li>seba(1)</li><li>cucho(1)</li>
             <li>CAJA=30.000 gs</li>
           </ul>
         </div>
         <div class="equipo negro">
           <h5>Equipo Negro</h5>
           <ul>
-            <li>Benja</li>
-            <li>tommi</li>
-            <li>larry</li>
-            <li>pichi</li>
-            <li>agus(2)</li>
-            <li>juanca</li>
-            <li>fabi(4)</li>
-            <li>Choco(3)</li>
+            <li>Benja</li><li>tommi</li><li>larry</li><li>pichi</li>
+            <li>agus(2)</li><li>juanca</li><li>fabi(4)</li><li>Choco(3)</li>
           </ul>
         </div>
       </div>
     </div>
-
-
-
-
-
-
-
   </div>  
 <br><br><br>
 <div>
@@ -824,10 +609,6 @@
       <img src="eterno.png" alt="Logo Pro Amateur Futbol Club">
     </div> 
   </div>
-    
-
-
-  
 </div>
 
 <br><br><br><br>
@@ -835,557 +616,123 @@
 <div>
    <h1 id="estrellas">Estrellas consagradas</h1>
   <table id="tabla-campeones">
-
     <tr>
       <th>Año</th>
       <th>Mejor Jugador</th>
       <th>Mejor Arquero</th>
       <th>Goleador</th>
     </tr>
-    <tr>
-      <td>2023/Clausura</td>
-    
-      <td>Tomo</td>
-      <td>Galar</td>
-      <td>Choco</td>
-    </tr>
-    <tr>
-      <td>2024/Apertura</td>
-      
-      <td>Pichi</td>
-      <td>Marce</td>
-      <td>Choco</td>
-    </tr>
-    <tr>
-      <td>2024/Clausura</td>
-      
-      <td>Gregor</td>
-      <td>Galar</td>
-      <td>Choco</td>
-    </tr>
-
-    <tr>
-      <td>2025/Apertura</td>
-      
-      <td>Masita</td>
-      <td>Galar</td>
-      <td>Marce S</td>
-    </tr>
-
-    <tr>
-      <td>2025/Clausura</td>
-      
-      <td>Choco</td>
-      <td>Primo</td>
-      <td>Choco</td>
-    </tr>
-
+    <tr><td>2023/Clausura</td><td>Tomo</td><td>Galar</td><td>Choco</td></tr>
+    <tr><td>2024/Apertura</td><td>Pichi</td><td>Marce</td><td>Choco</td></tr>
+    <tr><td>2024/Clausura</td><td>Gregor</td><td>Galar</td><td>Choco</td></tr>
+    <tr><td>2025/Apertura</td><td>Masita</td><td>Galar</td><td>Marce S</td></tr>
+    <tr><td>2025/Clausura</td><td>Choco</td><td>Primo</td><td>Choco</td></tr>
   </table>
 </div>
 <br><br><br>
 
+<table class="tabla-multas">
+  <caption><h1>⚠️Multas de Jugadores⚠️</h1></caption>
+  <thead>
+    <tr><th>Jugador</th><th>Motivo</th><th>Multa</th><th>Estado</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Cucho</td><td>Llegada tardia +30min</td><td>30.000 Gs / -2 puntos</td><td>Pendiente</td></tr>
+  </tbody>
+</table>
 
+<h4>- 🤝 Cuidemos siempre el cuerpo del rival, porque lo importante es competir sanamente.  
+    - La idea es que los partidos sean intensos, divertidos y seguros para todos.  
+    Y no olvidemos que, gane quien gane, siempre nos espera CHEPI en el tercer tiempo con asado y birra 🍖🍻.  
+    Ese es el verdadero campeonato que nunca se pierde. 🥇</h4>
 
-
-
-
-
-
-
-
-
-    <table class="tabla-multas"> <caption><h1>⚠️Multas de Jugadores⚠️</h1></caption> <thead> <tr> <th>Jugador</th> <th>Motivo</th> <th>Multa</th> <th>Estado</th> </tr> </thead> <tbody> <tr> <td>Cucho</td> <td>Llegada tardia +30min</td> <td>30.000 Gs / -2 puntos</td> <td>Pendiente</td> </tr> </tbody> </table>
-
-    
-
-
-    
-
-
-
-
-    
-    
-
-
-  </div>
-
- <h4>- 🤝 Cuidemos siempre el cuerpo del rival, porque lo importante es competir sanamente.  
-      - La idea es que los partidos sean intensos, divertidos y seguros para todos.  
-
-        Y no olvidemos que, gane quien gane, siempre nos espera CHEPI en el tercer tiempo con asado y birra 🍖🍻.  
-
-        Ese es el verdadero campeonato que nunca se pierde. 🥇</h4>
   <script>
-
-    
-    
   // Selección de filas en la tabla
   const filas = document.querySelectorAll("#tabla tr");
-
   filas.forEach(fila => {
     fila.addEventListener("click", () => {
-      // Quitar selección previa
       filas.forEach(f => f.classList.remove("seleccionado"));
-      // Marcar la fila actual
       fila.classList.add("seleccionado");
     });
   });
 
-    
-function ordenarTabla() {
-  const tabla = document.getElementById("tabla");
-  const filas = Array.from(tabla.rows).slice(1); // excluye encabezado
+  function ordenarTabla() {
+    const tabla = document.getElementById("tabla");
+    const filas = Array.from(tabla.rows).slice(1); // excluye encabezado
 
-  filas.sort((a, b) => {
-    const partidosA = Number(a.cells[1].innerText);
-    const partidosB = Number(b.cells[1].innerText);
+    filas.sort((a, b) => {
+      const partidosA = Number(a.cells[2].innerText);
+      const partidosB = Number(b.cells[2].innerText);
+      const golesA = Number(a.cells[6].innerText);
+      const golesB = Number(b.cells[6].innerText);
+      const puntosA = Number(a.cells[7].innerText);
+      const puntosB = Number(b.cells[7].innerText);
 
-    const golesA = Number(a.cells[5].innerText);
-    const golesB = Number(b.cells[5].innerText);
+      if (puntosB !== puntosA) return puntosB - puntosA;
+      if (golesB !== golesA) return golesB - golesA;
+      return partidosA - partidosB;
+    });
 
-    const puntosA = Number(a.cells[6].innerText);
-    const puntosB = Number(b.cells[6].innerText);
+    // Reinsertar filas ordenadas y numerar
+    const fragment = document.createDocumentFragment();
+    filas.forEach((fila, i) => {
+      fila.cells[0].innerText = i + 1; // asigna número de posición
+      fragment.appendChild(fila);
+    });
+    tabla.appendChild(fragment);
+  }
 
-    // 1️⃣ Ordenar por puntos (descendente)
-    if (puntosB !== puntosA) return puntosB - puntosA;
+  window.onload = ordenarTabla;
 
-    // 2️⃣ Si empatan en puntos, ordenar por goles (descendente)
-    if (golesB !== golesA) return golesB - golesA;
-
-    // 3️⃣ Si también empatan en goles, ordenar por partidos (ascendente)
-    return partidosA - partidosB;
+  // Slider infinito
+  const slidesContainer = document.querySelector('.slides');
+  const originalImages = Array.from(document.querySelectorAll('.slides img'));
+  
+  // Clonar todas las imágenes y agregarlas al final para efecto infinito
+  originalImages.forEach(img => {
+    const clone = img.cloneNode(true);
+    slidesContainer.appendChild(clone);
   });
 
-  // Reinsertar filas ordenadas
-  const fragment = document.createDocumentFragment();
-  filas.forEach(fila => fragment.appendChild(fila));
-  tabla.appendChild(fragment);
-}
+  const imgWidth = 320;
+  let currentIndex = 0;
+  const total = originalImages.length;
 
-// Ejecutar al cargar
-window.onload = ordenarTabla;
+  function showSlide() {
+    currentIndex++;
+    slidesContainer.style.transition = 'transform 0.8s ease-in-out';
+    slidesContainer.style.transform = `translateX(${-currentIndex * imgWidth}px)`;
 
-
-const slides = document.querySelector('.slides'); 
-const images = document.querySelectorAll('.slides img'); let index = 0; 
-function showSlide() { index = (index + 1) % images.length; slides.style.transform = `translateX(${-index * 320}px)`; } setInterval(showSlide, 2000); // cambia cada 3 segundos
-
-const titulo = document.getElementById("torneo");
-  let estado = false;
-
-  setInterval(() => {
-    if (estado) {
-      titulo.style.color = "yellow";   // letras amarillas
-      titulo.style.transform = "translateX(10px)"; // se mueve a la derecha
-    } else {
-      titulo.style.color = "black";    // letras negras
-      titulo.style.transform = "translateX(-10px)"; // se mueve a la izquierda
+    // Cuando llega al final de las originales, salta sin animación al inicio
+    if (currentIndex >= total) {
+      setTimeout(() => {
+        slidesContainer.style.transition = 'none';
+        currentIndex = 0;
+        slidesContainer.style.transform = `translateX(0px)`;
+      }, 800);
     }
+  }
+
+  setInterval(showSlide, 2500);
+
+  // Animación título torneo
+  const titulo = document.getElementById("torneo");
+  let estado = false;
+  setInterval(() => {
+    titulo.style.color = estado ? "yellow" : "black";
+    titulo.style.transform = estado ? "translateX(10px)" : "translateX(-10px)";
     estado = !estado;
-  }, 1000); // cada 1 segundo
+  }, 1000);
 
-
-
-
+  // Animación estrellas
   const tituloEstrellas = document.getElementById("estrellas");
   let estadoEstrellas = false;
-
   setInterval(() => {
-    if (estadoEstrellas) {
-      tituloEstrellas.style.color = "yellow";   // letras amarillas
-      tituloEstrellas.style.transform = "translateX(10px)"; // se mueve a la derecha
-    } else {
-      tituloEstrellas.style.color = "black";    // letras negras
-      tituloEstrellas.style.transform = "translateX(-10px)"; // se mueve a la izquierda
-    }
+    tituloEstrellas.style.color = estadoEstrellas ? "yellow" : "black";
+    tituloEstrellas.style.transform = estadoEstrellas ? "translateX(10px)" : "translateX(-10px)";
     estadoEstrellas = !estadoEstrellas;
-  }, 1000); // cada 1 segundo
-
-
-
-  
-
-
-
-
-  
-
-
-  
-
-  
-
-</script>
+  }, 1000);
+  </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
