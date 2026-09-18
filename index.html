@@ -714,7 +714,7 @@
   let estado = false;
   setInterval(() => {
     titulo.style.color = estado ? "gold" : "black";
-    titulo.style.transform = estado ? "translateX(10px)" : "translateX(-10px)";
+    titulo.style.transform = estado ? "translateX(0px)" : "translateX(0px)";
     estado = !estado;
   }, 1000);
 
@@ -723,7 +723,7 @@
   let estadoEstrellas = false;
   setInterval(() => {
     tituloEstrellas.style.color = estadoEstrellas ? "gold" : "black";
-    tituloEstrellas.style.transform = estadoEstrellas ? "translateX(10px)" : "translateX(-10px)";
+    tituloEstrellas.style.transform = estadoEstrellas ? "translateX(0px)" : "translateX(0px)";
     estadoEstrellas = !estadoEstrellas;
   }, 1000);
 
